@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Profile_Book.View.MainPage"
+             Title="{Binding Title}">
+
+    <Grid >
+
+    <Label Grid.Row="0"  Text="User SingIn" BackgroundColor="Blue" VerticalOptions="Start" FontSize="Title" LineHeight="170"/>
+
+    <StackLayout VerticalOptions="Center">
+
+        <Entry  x:Name="Login"  Placeholder="Login "  
+                   HorizontalOptions="FillAndExpand" Margin="40,3,40,3"
+                   Text="{Binding Login}"  />
+
+        <Entry x:Name="Password" 
+                   Placeholder="Password"
+                   IsPassword="True"
+                   HorizontalOptions="FillAndExpand"  Margin="40,3,40,3"
+                   Text="{Binding Password}" />
+
+        <Button Text="SingIn" 
+                   BackgroundColor="Orange"  
+                   VerticalOptions="Center"   Margin="40,3,40,3"
+                   Command="{Binding SingInButtonTapCommand}"/>
+
+
+        <Label 
+                 HorizontalOptions="CenterAndExpand">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="SingUp"
+                              FontSize="Title"
+                              TextColor="Blue"
+                              TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                          CommandParameter="MainListPage" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+    </StackLayout>
+
+
+    </Grid>
+
+ </ContentPage>

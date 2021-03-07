@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Profile_Book.View.SingUpPage">
+    <Grid >
+
+        <Label Grid.Row="0"  Text="Users SingUp" BackgroundColor="Blue" VerticalOptions="Start" FontSize="Title" LineHeight="170"/>
+
+        <StackLayout VerticalOptions="Center">
+
+            <Entry  x:Name="Login"  Placeholder="Login "  
+                   HorizontalOptions="FillAndExpand" Margin="40,3,40,3"
+                   Text="{Binding Login}"  />
+
+            <Entry x:Name="Password" 
+                   Placeholder="Password"
+                   IsPassword="True"
+                   HorizontalOptions="FillAndExpand"  Margin="40,3,40,3"
+                   Text="{Binding Password}" />
+
+            <Entry x:Name="Confirm_Password" 
+                   Placeholder="Confirm"
+                   IsPassword="True"
+                   HorizontalOptions="FillAndExpand"  Margin="40,3,40,3"
+                   Text="{Binding ConfirmPassword}" />
+
+
+            <Button Text="SingUp" 
+                   BackgroundColor="Orange"  
+                   VerticalOptions="Center"   Margin="40,3,40,3"
+                   Command="{Binding SingInButtonTapCommand}"/>
+
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

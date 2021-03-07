@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Profile_Book.View.AddEditProfilePage"
+             Title="AddEditProfilePage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Save" Order="Primary" Icon="Microsoft.png" Text="Save" Priority="0" Command="{Binding ONButtonSaveCommand}" />
+        <ToolbarItem Name="Create" Order="Primary" Icon="Xamarin.png" Text="Create" Priority="1" Command="{Binding ONButtonSaveCommand}" />
+    </ContentPage.ToolbarItems>
+    <Grid>
+
+        <StackLayout BindingContext="{Binding EditProfile}" >
+            <Image Source="pic_profile.png" 
+                   HorizontalOptions="CenterAndExpand" 
+                   HeightRequest="200" 
+                   WidthRequest="200" 
+                   Margin="20,10,20,10"/>
+
+            <Label x:Name="Id"   Text="{Binding Id}"/>
+
+            <Entry x:Name="NickName"  Placeholder="NickName"   Text="{Binding NickName}"/>
+
+            <Entry x:Name="FullName"  Placeholder="FullName"   Text="{Binding FullName}"/>
+
+            <Entry x:Name="Password" Placeholder="Password" Text="{Binding Password}"/>
+
+            <Label x:Name="Date"  Text="{Binding Date}"/>
+            
+        </StackLayout>
+        
+    </Grid>
+    
+    
+    
+    
+    
+</ContentPage>

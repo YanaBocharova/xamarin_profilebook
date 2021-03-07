@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_Profile_Book.View.MainListPage"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             Title="MainListPage">
+
+   <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Logout" Order="Primary" Icon="ic_exit_to_app.png" Text="Logout" Priority="0"   Command="{Binding ClickCommandLogout}"  />
+        <ToolbarItem Name="Settings" Order="Primary" Icon="ic_settings.png" Text="Settings" Priority="1"   Command="{Binding ClickCommandSettings} " />
+    </ContentPage.ToolbarItems>
+
+
+    <Grid>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+        </Grid>
+
+            <ScrollView Grid.Row="0">
+                <StackLayout>
+
+                    <ListView 
+                        VerticalOptions="Center"  
+                        ItemsSource="{Binding ProfileList}"
+                        HasUnevenRows="True">
+                           <ListView.ItemTemplate>
+                                  <DataTemplate>
+                                       <ViewCell>
+                                           <ViewCell.View>
+                                                   <StackLayout>
+                                                            <Image Source="pic_profile.png" 
+                                                                   HorizontalOptions="Start" 
+                                                                   HeightRequest="50" 
+                                                                   WidthRequest="50" 
+                                                                   Margin="20,10,20,10"
+                                                                  
+                                                                   />
+                                                            
+                                                            <Label Text="{Binding Id}"/>
+                                                       
+                                                            <Label Text="{Binding NickName}"/>
+
+                                                            <Label Text="{Binding FullName}"/>
+                                                       
+                                                            <Label Text="{Binding Login}"/>
+                                                           
+                                                           <Label Text="{Binding Password}"/>
+                                                           
+                                                           <Label Text="{Binding Date}"/>
+                                                       
+                                                       
+                                                  </StackLayout>
+                                           </ViewCell.View>
+                                        </ViewCell>
+                                  </DataTemplate>
+                           </ListView.ItemTemplate>
+                    </ListView>
+        
+                </StackLayout>
+            </ScrollView>
+
+        <Button Grid.Row="0"
+                ImageSource="ic_add.png"
+                BorderColor="AliceBlue" 
+                BorderWidth="3" 
+                FontAttributes="Bold" 
+                BackgroundColor="Blue" 
+                BorderRadius="35" TextColor="White" 
+                HorizontalOptions="End" WidthRequest="70" 
+                HeightRequest="70" Margin="0,0,20,22" 
+                VerticalOptions="End"
+                Command="{Binding AddButtonTabCommand}"/>
+
+
+    </Grid>
+    
+    
+</ContentPage>
