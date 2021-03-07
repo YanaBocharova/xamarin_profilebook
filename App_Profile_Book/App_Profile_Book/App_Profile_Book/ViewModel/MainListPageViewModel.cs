@@ -37,9 +37,8 @@ namespace App_Profile_Book.ViewModel
         }
 #endregion
 
-        public MainListPageViewModel(ISettingsManager settingsManager, IProfileService profileService, INavigationService navigationService)
+        public MainListPageViewModel(IProfileService profileService, INavigationService navigationService)
         {
-            //this.settingsManager = settingsManager;
             this.profileService = profileService;
             this.navigationService = navigationService;
             Title = "MainListPage";

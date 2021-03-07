@@ -17,7 +17,6 @@ namespace App_Profile_Book.ViewModel
     public class SettingsViewPageViewModal : BindableBase, IInitializeAsync
     {
         private IProfileService profileService;
-       // private INavigationParameters navigateParams;
         private readonly INavigationService navigationService;
 
         private string title;
@@ -36,12 +35,10 @@ namespace App_Profile_Book.ViewModel
 
         public SettingsViewPageViewModal(IProfileService profileService, INavigationService navigationService)
         {
-            //this.navigateParams = navigateParams;
             this.profileService = profileService;
             this.navigationService = navigationService;
             Title = "SettingsViewPage";
         }
-
 
         public ObservableCollection<ProfileModel> profileList;
 
